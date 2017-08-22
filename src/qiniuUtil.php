@@ -66,7 +66,7 @@ class qiniuUtil
     {
         $uploadMgr = new UploadManager();
         // 上传到七牛后保存的文件名
-        if(!empty($key)){
+        if(empty($key)){
             $pathInfo = pathinfo($filePath);
             $key = $pathInfo['basename'];
         }
