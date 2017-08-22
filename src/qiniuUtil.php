@@ -10,13 +10,17 @@ use Qiniu\Storage\UploadManager;
 class qiniuUtil
 {
     // 需要填写你的 Access Key 和 Secret Key
-    const  accessKey = 'YZkj1kb9bXrGbXJjxLvRIpR5BFNypLDagGMu6w4x';
-    const  secretKey = 's5lnUgmffgXHgqtZRXTegbq2mufBkO4DlupKybVn';
+    private  $accessKey;
+    private  $secretKey;
+
     private $auth;
     private $uploadMgr;
-    function __construct()
+
+    function __construct($accessKey,$secretKey)
     {
-        $this->auth = new Auth(self::accessKey, self::secretKey);
+        $this->accessKey = $accessKey;
+        $this->secretKey = $secretKey;
+        $this->auth = new Auth($this->accessKey,$this->secretKey);
         $this->uploadMgr = new UploadManager();
     }
 
@@ -44,4 +48,6 @@ class qiniuUtil
     function delFile(){
 
     }
+
+
 }
