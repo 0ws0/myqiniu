@@ -85,9 +85,19 @@ class qiniuUtil
      */
     function delFile($key){
         //初始化BucketManager
+        $result = false;
+
         $bucketMgr = new BucketManager($this->auth);
+
         //删除$bucket 中的文件 $key
         $err = $bucketMgr->delete($this->bucketName,$key);
-        return $err;
+
+        if($err == null){
+            $result = array('ret' =>true,'err'=>$err);
+        }else{
+            $result = array('ret' =>false,'err'=>$err);
+        }
+
+        return $result;
     }
 }
