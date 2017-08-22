@@ -1,5 +1,5 @@
 <?php
-namespace qiniusdk;
+namespace myqiniu;
 
 // 引入鉴权类
 use Qiniu\Auth;
@@ -42,13 +42,11 @@ class qiniuUtil
         //调用UploadManager的putFile 方法进行文件的上传。
         list($ret, $err) = $this->uploadMgr->putFile($token, $key, $filePath);
 
-        return array('ret'=>$ret,'err'=>$err);
+        return array('ret' => $ret,'err' => $err);
     }
 
     //删除文件
     function delFile(){
 
     }
-
-
 }
