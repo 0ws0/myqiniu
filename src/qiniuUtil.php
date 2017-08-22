@@ -25,7 +25,8 @@ class qiniuUtil
     }
 
     //上传文件
-    function uploadFile($bucketName,$filePath,$saveFilename = ''){
+    function uploadFile($bucketName,$filePath,$saveFilename = '')
+    {
         // 生成上传 Token
         //$token = $auth->uploadToken($bucket,'test.txt');
         $token = $this->auth->uploadToken($bucketName);
@@ -38,7 +39,7 @@ class qiniuUtil
             $key = $pathInfo['basename'];
         }
 
-        // 调用 UploadManager 的 putFile 方法进行文件的上传。
+        //调用UploadManager的putFile 方法进行文件的上传。
         list($ret, $err) = $this->uploadMgr->putFile($token, $key, $filePath);
 
         return array('ret'=>$ret,'err'=>$err);
