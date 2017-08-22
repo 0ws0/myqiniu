@@ -1,0 +1,20 @@
+{
+    "name": "0ws0/myqiniu",
+    "type": "library",
+    "require": {
+        "qiniu/php-sdk": "^7.1"
+    },
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "vision",
+            "email": "sunshine77580@gmail.com"
+        }
+    ],
+    "minimum-stability": "stable",
+    "autoload": {
+        "psr-4": {
+            "myqiniu\\": "src/"
+        }
+    }
+}
